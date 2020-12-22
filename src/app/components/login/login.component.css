@@ -1,0 +1,28 @@
+.container {
+    width: 400px;
+    display: table;
+    margin: 0 auto;
+    /* border: 1px solid #ddd; */
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.max-width {
+    width:100%;
+}
+
+.form-links {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.form-links a:link, a:visited {
+    font-size: small;
+    color: #333;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}

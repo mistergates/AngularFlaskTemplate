@@ -1,0 +1,6 @@
+flask==1.1.2
+flask-login==0.5.0
+flask-sqlalchemy==2.4.4
+flask-cors==3.0.9
+pytz==2020.4
+passlib==1.7.4

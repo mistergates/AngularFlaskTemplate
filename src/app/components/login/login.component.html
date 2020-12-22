@@ -1,0 +1,23 @@
+<mat-card class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+        <div class="form-group">
+            <mat-form-field appearance="fill" class="max-width">
+                <mat-label>Email Address</mat-label>
+                <input matInput formControlName="email" id="email" type="email" required>
+                <mat-error *ngIf="fv.f.email.invalid">{{fv.validateEmail()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field appearance="fill" class="max-width">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" id="password" type="password" required>
+                <mat-error *ngIf="fv.f.password.invalid">{{fv.validatePassword()}}</mat-error>
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button color="primary" class="max-width" [disabled]="!loginForm.valid">Sign In</button>
+
+    </form>
+</mat-card>
