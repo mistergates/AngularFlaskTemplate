@@ -21,5 +21,19 @@
 .sidenav-btn {
     width: 100%;
     margin: 0;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
+    text-align: left;
+}
+
+.topbar-spacer {
+    flex: 1 1 auto;
+  }
+
+.large-icon {
+    font-size: 36px !important;
+}
+
+.title-btn {
+    font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+    letter-spacing: normal;
 }

@@ -1,27 +1,23 @@
-<!-- <html>
-  <head></head>
-  <body>
-    <p>
-      <mat-toolbar color="primary">
-        <span>My Application</span>
-      </mat-toolbar>
-    </p>
-    <div class="app-content">
-      <router-outlet></router-outlet>
-    </div>
-  </body>
-</html> -->
-
 <mat-toolbar color="primary">
   <button mat-icon-button color="basic" aria-label="Menu"(click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My Application</span>
+  <!-- <span>Flask/Angular Template</span> -->
+  <span><button mat-button routerLink="/" class="title-btn">Flask/Angular Template</button></span>
+  <span class="topbar-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon class="large-icon">account_circle</mat-icon>
+  </button>
 </mat-toolbar>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button>
+</mat-menu>
 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="sidenav-content">
-    <button mat-button class="sidenav-btn" routerLink="/">Home</button>
+    <button mat-button class="sidenav-btn" routerLink="/"><mat-icon aria-hidden="false">home</mat-icon></button>
     <button mat-button class="sidenav-btn" routerLink="/login">Login</button>
   </mat-sidenav>
 
