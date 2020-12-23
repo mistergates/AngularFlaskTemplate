@@ -1,1 +1,1 @@
-from ..api.app import db
+from ..api.app import app, db

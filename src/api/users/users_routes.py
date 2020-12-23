@@ -23,6 +23,12 @@ def user_login():
     return users_lib.user_login(request.get_json(force=True))
 
 
+@users_api.route(f'{app.config["API_BASE"]}/{ENDPOINT}/logout', methods=['POST'])
+@login_required
+def user_logout():
+    return users_lib.user_logout()
+
+
 @users_api.route(f'{app.config["API_BASE"]}/{ENDPOINT}/generateApiKey', methods=['POST'])
 @login_required
 def gen_api_key():

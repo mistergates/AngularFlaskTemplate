@@ -4,3 +4,4 @@ flask-sqlalchemy==2.4.4
 flask-cors==3.0.9
 pytz==2020.4
 passlib==1.7.4
+PyJWT==1.4.2
