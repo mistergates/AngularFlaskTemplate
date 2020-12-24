@@ -13,16 +13,20 @@
 
 .form-links {
     width: 100%;
-    text-align: center;
-    padding-top: 20px;
+    /* text-align: center; */
+    /* padding-top: 20px; */
 }
 
 .form-links a:link, a:visited {
-    font-size: small;
+    font-size: smaller;
     color: #333;
     text-decoration: none;
 }
 
 .form-links a:hover {
     text-decoration: underline;
+}
+
+button {
+    margin: 20px 0px;
 }

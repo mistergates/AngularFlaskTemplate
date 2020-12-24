@@ -62,10 +62,11 @@ def user_login(payload):
 
     # Generate JWT
     auth_token = user.encode_auth_token(user.id)
+    print(type(auth_token), auth_token)
 
     # Set user as logged in
     login_user(user, remember=payload.get('remember_me', False))
-    return jsonify({'status': 'success', 'message': 'Login successful.', 'auth_token': auth_token}), 200
+    return jsonify({'status': 'success', 'message': 'Login successful.', 'auth_token': auth_token.decode()}), 200
 
 
 def user_logout():

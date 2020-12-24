@@ -26,7 +26,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+### Create DB
+
+Create the database, tables and run the migrations:
+
+```sh
+$ python manage.py create_db
+$ python manage.py db init
+$ python manage.py db migrate
+```
+
+### Run the API Application
+
+```sh
+$ python manage.py runserver -h 0.0.0.0 -p 8080
+```
+
 ## TODO
-* Persist user login (JWT?)
-* User icon / menu in top-bar
-* Toggle menu options based on user login status
+* Where is the /status GET request supposed to route to? https://realpython.com/user-authentication-with-angular-4-and-flask/#user-status

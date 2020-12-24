@@ -13,13 +13,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { AuthService } from './services/auth.service';
+import { StatusComponent } from './components/status/status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +29,11 @@ import { AuthService } from './services/auth.service';
     ReactiveFormsModule,
     MaterialModule,
     RouterModule.forRoot([
-      {path: '', redirectTo: '/home', pathMatch: 'full'},
-      {path: 'home', component: HomeComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'register', component: RegisterComponent}
+      { path: '', redirectTo: '/home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'status', component: StatusComponent }
     ]),
     BrowserAnimationsModule
   ],

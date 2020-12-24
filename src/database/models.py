@@ -3,7 +3,7 @@ Database Model
 '''
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import jwt
 import pytz
@@ -34,8 +34,8 @@ class Users(db.Model, UserMixin):
     def encode_auth_token(self, user_id):
         try:
             payload = {
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=5),
-                'iat': datetime.datetime.utcnow(),
+                'exp': datetime.utcnow() + timedelta(days=5, seconds=0),
+                'iat': datetime.utcnow(),
                 'sub': user_id
             }
             return jwt.encode(
@@ -51,7 +51,7 @@ class Users(db.Model, UserMixin):
         try:
             payload = jwt.decode(auth_token, app.config.get('SECRET_KEY'))
             token_disabled = DisabledToken.check_disabled(auth_token)
-    
+
             if token_disabled:
                 return 'Token disabled. Please log in again.'
 

@@ -7,6 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
+  // Interfaces
 
   constructor(private http: HttpClient) { }
 
@@ -24,6 +25,7 @@ export class ApiService {
     ).pipe(map(this.extractData), catchError(this.errorHandler));
   };
 
+  
   /**
    * POST request for user registration
    *
@@ -34,12 +36,12 @@ export class ApiService {
       this.API_BASE + 'users/register',
       payload
     ).pipe(map(this.extractData), catchError(this.errorHandler));
-  };
+  }
 
 
 
 
-  
+
   /**
    * Method for catching errors from API requests
    *

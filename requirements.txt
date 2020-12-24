@@ -2,6 +2,8 @@ flask==1.1.2
 flask-login==0.5.0
 flask-sqlalchemy==2.4.4
 flask-cors==3.0.9
+flask-migrate==2.5.3
+flask-script==2.0.6
 pytz==2020.4
 passlib==1.7.4
 PyJWT==1.4.2

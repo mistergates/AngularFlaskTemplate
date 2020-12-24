@@ -18,7 +18,11 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     public fv: FormValidationService,
     private _snackBar: MatSnackBar,
-    private router: Router) { }
+    private router: Router) { 
+      interface User {
+        auth_token: string;
+      }
+    }
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
@@ -30,13 +34,14 @@ export class LoginComponent implements OnInit {
     this.fv.setForm(this.loginForm);
   }
 
+
   /**
-   * Submit the user registration form
+   * Submit the user login form
    */
   submitLogin() {
     // Validate the form, return if it fails
     if (!this.loginForm.valid) {
-      this._snackBar.open('Registration failed.', 'Close', {
+      this._snackBar.open('Login failed.', 'Close', {
         duration: 2000,
       });
       return;
@@ -49,12 +54,14 @@ export class LoginComponent implements OnInit {
     console.log(payload);
 
     // Send payload to userLogin API
-    this.api.userLogin(payload).subscribe(
-      data => {
-        console.log(data);
+    this.api.userLogin(payload).subscribe((data: any) => {
+        console.log('RECEIVED DATA:', data);
         this._snackBar.open('Login Successful.', 'Close', {
-          duration: 5000,
+          duration: 2000,
         });
+        
+        // Save token to local storage
+        localStorage.setItem('token', data.auth_token)
         this.router.navigate(['/']);
       },
       err => {
@@ -64,7 +71,6 @@ export class LoginComponent implements OnInit {
         });
       }
     );
-
   }
 
 }

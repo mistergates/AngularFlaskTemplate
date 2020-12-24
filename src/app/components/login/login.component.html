@@ -17,7 +17,13 @@
             </mat-form-field>
         </div>
 
+        <div class="form-links">
+            <a href="#">Forgot password?</a>
+        </div>
+
         <button mat-raised-button color="primary" class="max-width" [disabled]="!loginForm.valid">Sign In</button>
 
     </form>
+    <mat-divider></mat-divider>
+    <button mat-raised-button color="accent" class="max-width" routerLink="/register">Register</button>
 </mat-card>
